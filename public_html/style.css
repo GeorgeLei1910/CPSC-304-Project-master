@@ -1,0 +1,27 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.error {
+    color: red;
+}
+.success{
+    color: green;
+}
+input {
+    display: inline-block;
+}
+.tlab{
+    width: 250px;
+    display: inline-block;
+}
+.sect{
+    display: inline-block;
+}
+th{
+    background-color: #440088;
+    border-radius: 2px;
+    color: white;
+}
+td, th{
+    width: 150px;
+}

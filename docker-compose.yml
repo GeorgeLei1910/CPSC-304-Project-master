@@ -1,0 +1,27 @@
+version: '3'
+services:
+        php-apache:
+                image: php:7.4-apache
+                build: .
+                restart: always
+                volumes:
+                        - ./public_html:/var/www/html
+                ports:
+                        - "8080:80"
+                links:
+                        - mysql
+                environment:
+                        USER: docker
+        mysql:
+                image: mariadb:10.4
+                restart: always
+                ports:
+                        - "3040:3306"
+                volumes:
+                        - ./mysql_data:/var/lib/mysql/:rw
+                        - ./mysql_scripts:/docker-entrypoint-initdb.d/:rw
+                environment:
+                        MYSQL_DATABASE: cs304-project
+                        MYSQL_USER: cs304
+                        MYSQL_ALLOW_EMPTY_PASSWORD: "True"
+                        MYSQL_PASSWORD: cs304
